@@ -1,0 +1,119 @@
+syntax = "proto3";
+
+package kalidokit;
+
+message Vec3 {
+  float x = 1;
+  float y = 2;
+  float z = 3;
+}
+
+// Kalidokit.Face.solve()
+message Eye {
+  int32 l = 1;
+  int32 r = 2;
+}
+
+message MouthShape {
+  int32 A = 1;
+  int32 E = 2;
+  int32 I = 3;
+  int32 O = 4;
+  int32 U = 5;
+}
+
+message Mouth {
+  float x = 1;
+  float y = 2;
+  MouthShape shape =3;
+} 
+
+message Head {
+  int32 x = 1;
+  int32 y = 2;
+  int32 z = 3;
+  float width = 4;
+  Vec3 position = 5;
+}
+
+message Pupil {
+  float x = 1;
+  float y = 2;
+}
+
+message AvatarFace {
+  Eye eye = 1;
+  Mouth mouth = 2;
+  Head head = 3;
+  float brow = 4;
+  Pupil pupil = 5;
+}
+
+// Kalidokit.Pose.solve()
+message Hips {
+  Vec3 worldPosition = 1;
+  Vec3 position = 2;
+  Vec3 rotation = 3;
+}
+
+message AvatarPose {
+  Vec3 RightUpperArm = 1;
+  Vec3 LeftUpperArm = 2;
+  Vec3 RightLowerArm = 3;
+  Vec3 LeftLowerArm = 4;
+  Vec3 LeftUpperLeg = 5;
+  Vec3 RightUpperLeg = 6;
+  Vec3 RightLowerLeg = 7;
+  Vec3 LeftLowerLeg = 8;
+  Vec3 LeftHand = 9;
+  Vec3 RightHand = 10;
+  Vec3 Spine = 11;
+  Hips Hips = 12;
+}
+
+// Kalidokit.Hand.solve()
+message AvatarRightHand {
+  Vec3 RightWrist = 1;
+  Vec3 RightRingProximal = 2;
+  Vec3 RightRingIntermediate = 3;
+  Vec3 RightRingDistal = 4;
+  Vec3 RightIndexProximal = 5;
+  Vec3 RightIndexIntermediate = 6;
+  Vec3 RightIndexDistal = 7;
+  Vec3 RightMiddleProximal = 8;
+  Vec3 RightMiddleIntermediate = 9;
+  Vec3 RightMiddleDistal = 10;
+  Vec3 RightThumbProximal = 11;
+  Vec3 RightThumbIntermediate = 12;
+  Vec3 RightThumbDistal = 13;
+  Vec3 RightLittleProximal = 14;
+  Vec3 RightLittleIntermediate = 15;
+  Vec3 RightLittleDistal = 16;
+}
+
+message AvatarLeftHand {
+  Vec3 LeftWrist = 1;
+  Vec3 LeftRingProximal = 2;
+  Vec3 LeftRingIntermediate = 3;
+  Vec3 LeftRingDistal = 4;
+  Vec3 LeftIndexProximal = 5;
+  Vec3 LeftIndexIntermediate = 6;
+  Vec3 LeftIndexDistal = 7;
+  Vec3 LeftMiddleProximal = 8;
+  Vec3 LeftMiddleIntermediate = 9;
+  Vec3 LeftMiddleDistal = 10;
+  Vec3 LeftThumbProximal = 11;
+  Vec3 LeftThumbIntermediate = 12;
+  Vec3 LeftThumbDistal = 13;
+  Vec3 LeftLittleProximal = 14;
+  Vec3 LeftLittleIntermediate = 15;
+  Vec3 LeftLittleDistal = 16;
+}
+
+// All Kalidokit Results
+message AvatarRiggingResults {
+  AvatarFace riggedFace = 1;
+  AvatarPose riggedPose = 2;
+  AvatarRightHand riggedRightHand = 3;
+  AvatarLeftHand riggedLeftHand = 4;
+}
