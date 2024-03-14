@@ -1,3 +1,10 @@
+# What are Protocol Buffers?
+- Protocol buffers are the most commonly used data format at Google.
+- Protocol Buffers are a language-neutral, platform-neutral extensible mechanism for serializing structured data.
+- A combination of the definition language (created in .proto files).
+- The code that the proto compiler generates to interface with data, language-specific runtime libraries.
+- The serialization format for typed, structured data that is written to a file.
+
 ## Try this project
 
 - Clone it and open the folder in your preferred editor.
